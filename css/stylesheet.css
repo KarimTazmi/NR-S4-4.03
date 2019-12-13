@@ -100,7 +100,7 @@ body {
 /* Section: History */
 .history {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     padding: 4rem;
     background-color: #46a916;
@@ -125,3 +125,6 @@ body {
     content: '→';
     padding-left: 10px;
 }
+
+/* Section: Discover */
+
