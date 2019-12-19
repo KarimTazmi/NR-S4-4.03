@@ -1,0 +1,98 @@
+body {
+  width: 100vw;
+}
+
+/* Navigation */
+.navbar {
+  width: 100vw;
+  height: auto;
+  padding: 1rem;
+  align-items: center;
+  text-align: center;
+}
+
+.navbar__logo {
+  align-items: flex-start;
+  align-self: flex-start;
+}
+
+.navbar ul {
+  flex-direction: column;
+  padding-left: 1rem;
+}
+
+.navbar img {
+  align-items: flex-end;
+  align-self: flex-start;
+}
+
+/* Section: Showcase*/
+.showcase {
+    flex-direction: column;
+    text-align: center;
+    padding: 4rem 2rem 0rem 2rem;
+    line-height: 1;
+}
+
+.showcase__heading {
+    font-size: 40px;
+    margin-bottom: 2rem;
+}
+
+/* Section: Brands*/
+.brands ul {
+    flex-wrap: wrap;
+}
+
+.brands ul li {
+    width: 50%;
+    height: 207px;
+}
+
+/* Section: History */
+.history {
+    flex-direction: column;
+    padding: 3rem 2rem;
+}
+
+.history img {
+    width: 90%;
+    padding-bottom: 2rem;
+}
+
+.history__text {
+    text-align: center;
+}
+
+/* Section: Discover*/
+.discover {
+    padding: 3rem 3rem;
+    align-items: center;
+  }
+
+  .discover__items {
+      flex-direction: column;
+  }
+
+  .discover__single-item {
+      width: 100%;
+  }
+
+
+  /* Footer */
+  footer {
+      padding: 3rem 3rem;
+      flex-direction: column;
+  }
+
+  footer div {
+      padding: 0.5rem 0 0.5rem 0;
+  }
+
+  .foot__block-disclaimer p {
+    width: 100%;
+  }
+
+  .footer__block-copyright img {
+    display: none;
+  }
