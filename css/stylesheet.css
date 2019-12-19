@@ -2,15 +2,21 @@
 @import url("https://fonts.googleapis.com/css?family=Amatic+SC:700&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Lakki+Reddy&display=swap");
 
-/* Menu styling */
-* {
+html {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+:root {
+  font-family: Helvetica, Arial, sans-serif;
 }
 
 body {
-  font-family: Helvetica, Arial, sans-serif;
+  margin: 0;
 }
 
 /* Navigation*/
@@ -18,27 +24,27 @@ body {
   display: flex;
   top: 0;
   background: #ffffff;
-  color: #f30501;
+  color: #f30501; /* Deze variable omzetten naar een custom property? Je gebruikt hem vaker..*/
   justify-content: space-between;
   z-index: 10;
-  padding: 1rem 116px;
+  padding: 1rem 116px; /* waarom verschillende eenheden gebruiken? */
   font-size: 18px;
   font-weight: 300;
   height: 65px;
-  box-shadow: 0 4px 10px 0px #333333;
+  box-shadow: 0 4px 10px 0 #333333;
 }
 
 .navbar__logo {
   height: 55px;
   width: 55px;
-  margin-top: -16px;
+  margin-top: -16px; /* Altijd opletten als je dit gaat doen, is het nodig? Denk aan je flow */
 }
 
 .navbar ul {
   display: flex;
   align-items: center;
   list-style: none;
-  flex: 4;
+  flex: 4; /* Wat doet dit? flex: 1 === flex: 1 0 auto */
   padding-left: 120px;
 }
 
@@ -53,10 +59,10 @@ body {
 }
 
 .navbar ul li a:hover {
-  color: #ffffff;
+  color: #ffffff; /* variable? */
   background-color: #f30501;
-  text-decoration: none;
-  padding: 1.5rem 0.1rem;
+  text-decoration: none; /* Kan weg, heb je hierboven al staan */
+  padding: 1.5rem 0.1rem; /* 0.1rem kan geschreven worden als .1rem */ 
 }
 
 /* Section: Showcase */
@@ -67,7 +73,7 @@ body {
   color: #ffffff;
   padding: 2rem 10% 0rem 0;
   align-items: center;
-  z-index: 1;
+  z-index: 1; /* ?? */
 }
 
 .showcase__heading {
@@ -75,7 +81,7 @@ body {
   font-weight: 700;
   font-size: 70px;
   padding-top: 0;
-  vertical-align: middle;
+  vertical-align: middle; /** Werkt dit? **/
 }
 
 /* Section: Brands */
@@ -87,15 +93,16 @@ body {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
+  padding-left: 0; /** Default ul heeft padding, weghalen om controle te houden */
 }
 
 .brands ul li {
-  width: 25%;
+  width: 25%; /* Ik zou hier toch echt voor flex-basis gaan */
   height: 356px;
 }
 
 .brands ul li img {
-  width: 100%;
+  width: 100%; /* als je een kleinere afbeelding hebt wordt hij nu uitgerekt, als je max-width gebruikt niet */
 }
 
 /* Section: History */
@@ -113,7 +120,7 @@ body {
 }
 
 .history__heading {
-  font-family: "Lakki Reddy", cursive;
+  font-family: "Lakki Reddy", cursive; /* font-family in een custom property zetten? */
   font-size: 28px;
 }
 
@@ -136,21 +143,25 @@ body {
 }
 
 .discover__heading {
-  font-family: "Lakki Reddy", cursive;
+  font-family: "Lakki Reddy", cursive; /* als al je headings dit font hebben mag je het ook doen op de manier zoals hier onder */
   font-size: 34px;
   text-align: center;
   color: #f30501;
 }
 
+h1, h2, h3, h4 {
+  font-family: "Lakki Reddy", cursive; 
+}
+
 .discover__items {
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-start; /* dit is default en kan weg */
   padding: 2rem 0;
 }
 
 .discover__single-item {
-  width: 33%;
-  position: relative;
+  width: 33%; /* probeer het met flex-basis op te lossen */
+  position: relative; /* why ? */
 }
 
 .discover__image {
@@ -160,7 +171,7 @@ body {
 .discover__heading-small {
   font-family: "Lakki Reddy", cursive;
   font-size: 28px;
-  position: absolute;
+  position: absolute; /* Geen andere manier om dit te positioneren? */
   text-align: center;
   top: 45%;
   width: 100%;
@@ -174,7 +185,7 @@ body {
 .discover__button {
   text-decoration: none;
   color: #f30501;
-  padding: 0.75rem;
+  padding: .75rem;
   border: 1px solid #f30501;
   border-radius: 20px;
 }
@@ -216,3 +227,13 @@ footer a {
 .foot__block-disclaimer p {
   width: 50%;
 }
+/**
+
+Conclusie
+=========
+Ik mis het gebruik van flex grow / flex shrink opties, maar dat kan door hoe je bepaalde dingen anders hebt opgelost.
+Wees consistent in je gebruik van eenheden (px / rem)
+Als je waarden als fonts en kleuren vaker gebruikt, beter custom properties van maken
+Hier en daar wat left-overs die niets doen en weg kunnen...
+
+*/
