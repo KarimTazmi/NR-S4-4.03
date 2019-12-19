@@ -99,32 +99,98 @@ body {
 
 /* Section: History */
 .history {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 4rem;
-    background-color: #46a916;
-    color: #ffffff;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 4rem;
+  background-color: #46a916;
+  color: #ffffff;
 }
 
 .history img {
-    width: 50%;
+  width: 50%;
 }
 
 .history__heading {
-    font-family: "Lakki Reddy", cursive;
-    font-size: 28px;
+  font-family: "Lakki Reddy", cursive;
+  font-size: 28px;
 }
 
 .history a {
-    text-decoration: none;
-    color: #ffffff;
+  text-decoration: none;
+  color: #ffffff;
 }
 
 .history a::after {
-    content: '→';
-    padding-left: 10px;
+  content: "→";
+  padding-left: 10px;
 }
 
 /* Section: Discover */
+.discover {
+  background-color: #fd0;
+  color: #ffffff;
+  padding: 4rem 6rem;
+  align-items: center;
+}
 
+.discover__heading {
+  font-family: "Lakki Reddy", cursive;
+  font-size: 34px;
+  text-align: center;
+  color: #f30501;
+}
+
+.discover__items {
+  display: flex;
+  justify-content: flex-start;
+  padding: 2rem 0;
+}
+
+.discover__single-item {
+  width: 33%;
+  position: relative;
+}
+
+.discover__image {
+  width: 100%;
+}
+
+.discover__heading-small {
+  font-family: "Lakki Reddy", cursive;
+  font-size: 28px;
+  position: absolute;
+  text-align: center;
+  top: 45%;
+  width: 100%;
+}
+
+.discover__button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.discover__button {
+  text-decoration: none;
+  color: #f30501;
+  padding: 0.75rem;
+  border: 1px solid #f30501;
+  border-radius: 20px;
+}
+
+/*Footer*/
+footer {
+  background-color: #f30501;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding: 6rem;
+}
+
+.footer__links {
+  list-style: none;
+}
+
+footer a {
+  text-decoration: none;
+}
